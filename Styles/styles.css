@@ -1,12 +1,113 @@
-.forceCenterText 
+
+/*Removes default values for website spacing. (For more freedom with custom spacing)*/
+/*AKA a refresh*/
+*
 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.defaultBody
+/*Root psuedo class: can be use to trickle information down to all elements (Heirichaily)*/
+:root
 {
-    background-color: purple;
-    color: aliceblue;
+    /*Variables*/
+    /*-Colors*/
+
+    --BACKGROUND_COLOR: hsl(327, 47%, 20%);
+    --FOREGROUND_COLOR: rgb(255, 179, 0);
+    /*-Colors-end*/
+    /*Variables-end*/
 }
+
+/*Tag Overrides*/
+
+/*Default body look*/
+body
+{
+    background-color: var(--BACKGROUND_COLOR);
+    color: var(--FOREGROUND_COLOR);
+    border: 1px solid;
+}
+
+/*Tag Overrides-end*/
+
+
+.fullscreen
+{
+    width: 100vw;
+    height: 100vh;
+}
+
+.fillContainer
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+/*Flex*/
+.flex
+{
+    display: flex;
+}
+
+.flexCenterContent
+{
+    justify-content: center;
+    align-items: center;
+}
+
+/*.flexFillContainer
+{
+    
+}*/
+
+/*Flex-end*/
+
+/*Grid*/
+.grid
+{
+    display: grid;
+}
+
+.gridCenterContent
+{
+    justify-content: center;
+    align-items: center;
+}
+
+.gridFillContainer
+{
+}
+
+/*Grid-end*/
+
+.fullPagePDF
+{
+
+}
+
+
+/*Headers*/
+.fixedHeader
+{
+    border: 10px solid red;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+}
+
+.stickyHeader
+{
+    display: flex;
+    border: 10px solid red;
+    min-height: 10vh;
+    position: sticky;
+    top: 0;
+    justify-content: start;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+/*Headers-end*/
+
