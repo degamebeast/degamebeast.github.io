@@ -1,6 +1,6 @@
 
 /*Removes default values for website spacing. (For more freedom with custom spacing)*/
-/*AKA a refresh*/
+/*AKA a CSS-reset*/
 *
 {
     margin: 0;
@@ -11,16 +11,23 @@
 /*Root psuedo class: can be use to trickle information down to all elements (Heirichaily)*/
 :root
 {
-    /*Variables*/
-    /*-Colors*/
+    /*#region Variables*/
+
+
+    /*#region -Colors*/
 
     --BACKGROUND_COLOR: hsl(327, 47%, 20%);
     --FOREGROUND_COLOR: rgb(255, 179, 0);
-    /*-Colors-end*/
-    /*Variables-end*/
+    --ACTIVE_COLOR: royalblue;
+
+    /*#endregion*/
+
+
+
+    /*#endregion*/
 }
 
-/*Tag Overrides*/
+/*#region Tag Overrides*/
 
 /*Default body look*/
 body
@@ -30,13 +37,48 @@ body
     border: 1px solid;
 }
 
-/*Tag Overrides-end*/
+/*#endregion*/
 
+
+.debugText
+{
+    font-size: 7rem;
+    text-align: center;
+}
+/*#region Headers*/
+.fixedHeader
+{
+    position: fixed;
+    border: 10px solid red;
+    height: 10vh;
+    width: 100%;
+}
+
+.stickyHeader
+{
+    position: sticky;
+    border: 10px solid red;
+    min-height: 7.5vh;
+    max-height: 15vh;
+    top: 0;
+}
+
+.homeHeader
+{
+    /*    border: none;*/
+}
+
+/*#endregion*/
 
 .fullscreen
 {
     width: 100vw;
     height: 100vh;
+}
+
+.hide
+{
+    display: none;
 }
 
 .fillContainer
@@ -45,8 +87,24 @@ body
     height: 100%;
 }
 
+.fillRow
+{
+    width: 100%;
+}
 
-/*Flex*/
+.fillColumn
+{
+    height: 100%;
+}
+
+.noTextDecoration
+{
+    text-decoration: none;
+}
+
+
+
+/*#region Flex*/
 .flex
 {
     display: flex;
@@ -58,14 +116,22 @@ body
     align-items: center;
 }
 
+.flexHeader
+{
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column nowrap;
+    border: 10px double black;
+}
+
 /*.flexFillContainer
 {
     
 }*/
 
-/*Flex-end*/
+/*#endregion Flex-end*/
 
-/*Grid*/
+/*#region Grid*/
 .grid
 {
     display: grid;
@@ -81,33 +147,47 @@ body
 {
 }
 
-/*Grid-end*/
+/*#endregion*/
+
+/*#region List*/
+
+.noBullets
+{
+    list-style-type: none;
+}
+
+/*#endregion*/
+
+
+/*#region Header__Elements */
+
+.header__list
+{
+    justify-content: space-evenly;
+}
+
+.header__button
+{
+    background-color: var(--FOREGROUND_COLOR);
+    border: 1px solid black;
+    /*    border-radius: 0px;*/
+    text-align: center;
+    font-size: 3rem;
+    min-width: 25vw;
+}
+    
+    .header__button:hover
+    {
+        background-color: var(--ACTIVE_COLOR);
+    }
+
+/*#endregion */
+
+
 
 .fullPagePDF
 {
 
 }
 
-
-/*Headers*/
-.fixedHeader
-{
-    border: 10px solid red;
-    height: 10vh;
-    width: 100%;
-    position: fixed;
-}
-
-.stickyHeader
-{
-    display: flex;
-    border: 10px solid red;
-    min-height: 10vh;
-    position: sticky;
-    top: 0;
-    justify-content: start;
-    align-items: center;
-    flex-flow: column nowrap;
-}
-/*Headers-end*/
 
