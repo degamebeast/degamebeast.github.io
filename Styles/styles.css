@@ -147,6 +147,11 @@ body
 {
 }
 
+.gridHeader
+{
+
+}
+
 /*#endregion*/
 
 /*#region List*/
@@ -161,9 +166,15 @@ body
 
 /*#region Header__Elements */
 
+.header_h1
+{
+    font-size: 64px;
+}
+
 .header__list
 {
-    justify-content: space-evenly;
+    grid-template: 1fr / 1rem repeat(3, 1fr) 1rem;
+    gap: 1rem;
 }
 
 .header__button
