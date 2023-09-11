@@ -6,6 +6,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-size: 2rem;
 }
 
 /*Root psuedo class: can be use to trickle information down to all elements (Heirichaily)*/
@@ -58,14 +60,42 @@ body
 {
     position: sticky;
     border: 10px solid red;
-    min-height: 7.5vh;
-    max-height: 15vh;
+    height: 10vh;
     top: 0;
 }
 
 .homeHeader
 {
     /*    border: none;*/
+}
+
+/*#endregion*/
+
+/*#region Footers*/
+.fixedFooter
+{
+    position: fixed;
+    border: 10px solid red;
+    height: 10vh;
+    width: 100%;
+    bottom: 0;
+}
+
+.stickyFooter
+{
+    position: sticky;
+    border: 10px solid red;
+    height: 10vh;
+    bottom: 0;
+}
+
+.homeFooter
+{
+    /*    border: none;*/
+    background-color: var(--FOREGROUND_COLOR);
+    color: var(--BACKGROUND_COLOR);
+
+
 }
 
 /*#endregion*/
@@ -118,10 +148,24 @@ body
 
 .flexHeader
 {
-    justify-content: space-evenly;
+    justify-content:flex-end;
     align-items: center;
     flex-flow: column nowrap;
     border: 10px double black;
+}
+
+.flexFooter
+{
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row nowrap;
+    border: 5px solid black;
+    gap: 1vh;
+}
+
+.flexBody
+{
+
 }
 
 /*.flexFillContainer
@@ -168,7 +212,7 @@ body
 
 .header_h1
 {
-    font-size: 64px;
+    font-size: 5rem;
 }
 
 .header__list
@@ -179,12 +223,15 @@ body
 
 .header__button
 {
+    display: flex;
     background-color: var(--FOREGROUND_COLOR);
     border: 1px solid black;
     /*    border-radius: 0px;*/
-    text-align: center;
-    font-size: 3rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
     min-width: 25vw;
+    min-height: 5vh;
 }
     
     .header__button:hover
@@ -194,11 +241,50 @@ body
 
 /*#endregion */
 
+/*#region Footer__Elements */
 
+.footer_h1
+{
+    display: inline;
+    font-size: 2.5rem;
+}
+
+.footer__list
+{
+    grid-template: 1fr / 1rem repeat(3, 1fr) 1rem;
+    gap: 1rem;
+}
+
+.footer__button
+{
+    background-color: var(--FOREGROUND_COLOR);
+/*    border: 1px solid black;*/
+    /*    border-radius: 0px;*/
+    text-align: center;
+    font-size: 3rem;
+    min-width: 25vw;
+}
+
+    .footer__button:hover
+    {
+        background-color: var(--ACTIVE_COLOR);
+    }
+
+/*#endregion */
 
 .fullPagePDF
 {
 
 }
 
+.linkImage
+{
+    height: 7.5vh;
 
+    border: 0.25vw solid var(--BACKGROUND_COLOR);
+}
+
+.longPage
+{
+    margin: 1000%;
+}

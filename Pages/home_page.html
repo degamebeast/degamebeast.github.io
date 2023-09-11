@@ -8,60 +8,58 @@
 
 
     <!--<link rel="icon" href="" type="">-->
+    <link rel="stylesheet" href="../Styles/slideshow.css">
     <link rel="stylesheet" href="../Styles/styles.css">
     <!--How to include a JS file-->
     <script src="../JavaScript/SlideShow.js"></script>
     <script src="../JavaScript/CustomElements.js"></script>
+    <script src="../JavaScript/HTMLhelper.js"></script>
 </head>
 
-<body>
+<body class="" onload="helperLoad()">
     <deontae-header></deontae-header>
-
     <main>
+        <!--        Html Layout Sample for a slideshow-->
+        <!--onload="setupSlides()" will need to be placed in the body element containing these slides-->
+        <!--                 Slideshow container -->
+        <div class="slideshow-container">
+            <!--                     Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="../Media/TestingImages/jojoMoji.jpg" style="width:100%">
+                <div class="text">Caption Text</div>
+            </div>
 
-        <!--        <h1 class="">WIP</h1>-->
 
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="../Media/TestingImages/Halo.png" style="width:100%">
+                <div class="text">Caption Two</div>
+            </div>
 
-        <!--Html Layout Sample for a slideshow
-                 Slideshow container -->
-        <!--<div class="slideshow-container">-->
-        <!--             Full-width images with number and caption text -->
-        <!--<div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="../Media/TestingImages/jojoMoji.jpg" style="width:100%">
-            <div class="text">Caption Text</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="../Media/TestingImages/Halo.png" style="width:100%">
-            <div class="text">Caption Two</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="../Media/TestingImages/Console.png" style="width:100%">
-            <div class="text">Caption Three</div>
-        </div>-->
-        <!--             Next and previous buttons -->
-        <!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="../Media/TestingImages/Console.png" style="width:100%">
+                <div class="text">Caption Three</div>
+            </div>
+            <!--                     Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        <br>-->
-        <!--         The dots/circles -->
-        <!--<div style="text-align:center">
+        <br>
+        <!--                 The dots/circles -->
+        <div style="text-align:center">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
-        </div>-->
-
-
+        </div>
     </main>
 
 
-    <footer>
-    </footer>
 
+    <deontae-footer shift="Test">
+        ../Media/OtherLinkImages/github-mark.png
+    </deontae-footer>
 </body>
 
 </html>
