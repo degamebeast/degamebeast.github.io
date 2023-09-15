@@ -38,16 +38,9 @@ class DA_Footer extends HTMLElement {
 
     constructor() {
         super();
-        //this.root = this.attachShadow({ mode: 'open' });
     }
 
-    loaded()
-    {
-        console.log(this.tagName);
-        console.log(this.innerHTML);
-        console.log(this.textContent);
-        console.log(this.innerText);
-        let text = this.textContent;
+    connectedCallback() {
         this.innerHTML = `
     <footer class="fixedFooter flex flexFooter homeFooter">
         <h1 class="footer_h1">Links: </h1>
@@ -63,49 +56,11 @@ class DA_Footer extends HTMLElement {
 
     </footer>
     `;
-        //this.innerHTML = "";
-        //this.innerHTML = text;
-        let temp = this.getAttribute("shift");
-        if (temp == "Test") {
-
-            console.log(this.innerHTML);
-            console.log(this.textContent);
-            console.log(this.innerText);
-            console.log(text);
-            this.getElementsByClassName("linkImage").item(0).setAttribute("src", text);
-            //this.getElementsByClassName("linkImage").item(0).setAttribute("alt", "somting");
-   /*         this.getElementsByTagName("div").item(0).innerHTML = text;
-
-            this.innerHTML = text;*/
-        }
-    }
-
-    connectedCallback() {
-        //this.addEventListener("load", () => { this.loaded(); });
-
-        //this.loaded();
-
-        //this["loaded"]();
-
-        this.setAttribute("helperRun", "loaded");
-
-/*        this.addEventListener("fullyLoaded", );
-        //onload = "setupSlides()"
-        let document = this.ownerDocument;
-        let body = document.body;
-        let curLoad = body.getAttribute("onload");
-        body["setupSlides"]();
-        this.loaded();
-        body.setAttribute("onload", "loaded()");*/
-        //this.textContent;
-    }
-
-    disconnectedCallback() {
-        //this.removeEventListener("load", this.loaded());
     }
 }
 
 
 
-customElements.define('deontae-header', DA_Header);
-customElements.define('deontae-footer', DA_Footer);
+customElements.define('dsa-header', DA_Header);
+customElements.define('dsa-footer', DA_Footer);
+customElements.define('dsa-projectsection', DA_Footer);

@@ -12,10 +12,25 @@
     <link rel="stylesheet" href="../Styles/styles.css">
     <!--How to include a JS file-->
     <script src="../JavaScript/CustomElements.js"></script>
+
+
+
+    <!--LoadingScript-->
+    <script>
+        function documentLoad() {
+            helperLoad();
+        }
+    </script>
 </head>
 
-<body>
+<body onload="documentLoad()">
+    <dsa-header></dsa-header>
 
+    <main>
+
+    </main>
+
+    <dsa-footer></dsa-footer>
 </body>
 
 </html>

@@ -12,9 +12,17 @@
     <link rel="stylesheet" href="../Styles/styles.css">
 
     <script src="../JavaScript/CustomElements.js"></script>
+
+
+    <!--LoadingScript-->
+    <script>
+        function documentLoad() {
+            helperLoad();
+        }
+    </script>
 </head>
 
-<body class="fullscreen">
+<body class="fullscreen" onload="documentLoad()">
     <deontae-header></deontae-header>
 
     <main class="flex flexCenterContent">

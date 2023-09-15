@@ -2,7 +2,6 @@ let slideIndex = 1;
 
 //Sets the default index to 1 and shows the first slide
 function setupSlides() {
-    console.log("testing");
     slideIndex = 1;
     showSlides(slideIndex);
 }

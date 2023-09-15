@@ -14,10 +14,21 @@
     <script src="../JavaScript/SlideShow.js"></script>
     <script src="../JavaScript/CustomElements.js"></script>
     <script src="../JavaScript/HTMLhelper.js"></script>
+
+
+    <!--LoadingScript-->
+    <script>
+        function documentLoad() {
+            helperLoad();
+            setupSlides();
+        }
+    </script>
 </head>
 
-<body class="" onload="helperLoad()">
-    <deontae-header></deontae-header>
+
+
+<body class="" onload="documentLoad()">
+    <dsa-header></dsa-header>
     <main>
         <!--        Html Layout Sample for a slideshow-->
         <!--onload="setupSlides()" will need to be placed in the body element containing these slides-->
@@ -56,10 +67,9 @@
     </main>
 
 
-
-    <deontae-footer shift="Test">
-        ../Media/OtherLinkImages/github-mark.png
-    </deontae-footer>
+    
+    <dsa-footer>
+    </dsa-footer>
 </body>
 
 </html>
