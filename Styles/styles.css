@@ -31,12 +31,17 @@
 
 /*#region Tag Overrides*/
 
+html
+{
+}
+
 /*Default body look*/
 body
 {
     background-color: var(--BACKGROUND_COLOR);
     color: var(--FOREGROUND_COLOR);
     border: 1px solid;
+
 }
 
 /*#endregion*/
@@ -94,7 +99,6 @@ body
     /*    border: none;*/
     background-color: var(--FOREGROUND_COLOR);
     color: var(--BACKGROUND_COLOR);
-
 
 }
 
@@ -288,3 +292,35 @@ body
 {
     margin: 1000%;
 }
+
+
+/*#region Projects */
+
+.projectHolder
+{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.projectTitle
+{
+    order: -1;
+    font-size: 4rem;
+}
+
+.projectInfo
+{
+    order: 2;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.projectImage
+{
+    order: 1;
+    max-width: 90vw;
+}
+
+
+/*#endregion */

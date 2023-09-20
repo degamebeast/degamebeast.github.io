@@ -42,7 +42,7 @@ class DA_Footer extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-    <footer class="fixedFooter flex flexFooter homeFooter">
+    <footer class="stickyFooter flex flexFooter homeFooter">
         <h1 class="footer_h1">Links: </h1>
         <a href="https://github.com/degamebeast">
             <img class="linkImage" src="../Media/OtherLinkImages/github-mark.png" alt="My Github Link">
@@ -59,8 +59,40 @@ class DA_Footer extends HTMLElement {
     }
 }
 
+class DA_Project extends HTMLElement {
+
+    constructor() {
+        super();
+    }
+
+    onHelperLoad() {
+        var initialContenet = this.innerHTML;
+
+        this.innerHTML = `
+        <section class="projectHolder">
+
+            <h3 class="projectTitle">Title</h3>
+            <p class="projectInfo">
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
+            </p>
+            <img class="projectImage" src="../Media/testingImages/Halo.png" alt="Alternate Text">
+        </section>
+    `;
+
+        this.getElementsByTagName("img")[0].setAttribute("src", this.getAttribute("src"));
+        this.getElementsByTagName("p")[0].innerHTML = initialContenet;
+
+    }
+
+    connectedCallback() {
+        this.setAttribute("helperLoad", "");
+
+    }
+}
+
 
 
 customElements.define('dsa-header', DA_Header);
 customElements.define('dsa-footer', DA_Footer);
-customElements.define('dsa-projectsection', DA_Footer);
+customElements.define('dsa-project', DA_Project);
