@@ -221,7 +221,7 @@ body
 
 .header__list
 {
-    grid-template: 1fr / 1rem repeat(3, 1fr) 1rem;
+    grid-template: 1fr / 1rem repeat(4, 1fr) 1rem;
     gap: 1rem;
 }
 
@@ -233,9 +233,10 @@ body
     /*    border-radius: 0px;*/
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
-    min-width: 25vw;
+    font-size: 3.5rem;
+    min-width: 20vw;
     min-height: 5vh;
+    text-align: center;
 }
     
     .header__button:hover
