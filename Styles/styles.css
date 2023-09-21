@@ -216,7 +216,7 @@ body
 
 .header_h1
 {
-    font-size: 5rem;
+    font-size: 4.5rem;
 }
 
 .header__list
@@ -233,9 +233,9 @@ body
     /*    border-radius: 0px;*/
     justify-content: center;
     align-items: center;
-    font-size: 3.5rem;
+    font-size: 3rem;
     min-width: 20vw;
-    min-height: 5vh;
+    height: 5vh;
     text-align: center;
 }
     
