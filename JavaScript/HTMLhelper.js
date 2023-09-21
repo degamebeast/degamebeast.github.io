@@ -12,5 +12,4 @@ Giving an element the 'helperLoad' attribute without it also having a 'onHelperL
             elem["onHelperLoad"]();
     }
 
-    //window.location.reload();
 };
