@@ -66,6 +66,8 @@ class DA_Project extends HTMLElement {
         super();
     }
 
+
+
     onHelperLoad() {
         var initialContenet = this.innerHTML;
 
@@ -81,8 +83,10 @@ class DA_Project extends HTMLElement {
         </section>
     `;
 
-        this.getElementsByTagName("img")[0].setAttribute("src", this.getAttribute("src"));
-        this.getElementsByTagName("p")[0].innerHTML = initialContenet;
+        let img = this.getElementsByTagName("img")[0];
+        img.setAttribute("src", this.getAttribute("src"));
+        img.setAttribute("alt", img.src);
+        this.getElementsByTagName("p")[0].innerHTML = "";
 
     }
 

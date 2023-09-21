@@ -11,4 +11,6 @@ Giving an element the 'helperLoad' attribute without it also having a 'onHelperL
         if (elem.getAttribute("helperLoad") != null)
             elem["onHelperLoad"]();
     }
+
+    //window.location.reload();
 };
