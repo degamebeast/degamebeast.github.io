@@ -86,7 +86,7 @@ class DA_Project extends HTMLElement {
         let img = this.getElementsByTagName("img")[0];
         img.setAttribute("src", this.getAttribute("src"));
         img.setAttribute("alt", img.src);
-        this.getElementsByTagName("p")[0].innerHTML = "";
+        this.getElementsByTagName("p")[0].innerHTML = img.src;
 
     }
 
