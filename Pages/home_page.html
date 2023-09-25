@@ -30,43 +30,41 @@
 
 <body class="" onload="documentLoad()">
     <dsa-header></dsa-header>
+
     <main>
-        <!--        Html Layout Sample for a slideshow-->
-        <!--onload="setupSlides()" will need to be placed in the body element containing these slides-->
-        <!--                 Slideshow container -->
-        <div class="slideshow-container">
-            <!--                     Full-width images with number and caption text -->
-            <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <img src="../Media/TestingImages/jojoMoji.jpg" style="width:100%">
-                <div class="text">Caption Text</div>
-            </div>
+
+        <section class="homeWelcome">
+            <p class="welcome__quote">The answers are simpler than you think</p>
+
+        </section>
 
 
-            <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="../Media/TestingImages/Halo.png" style="width:100%">
-                <div class="text">Caption Two</div>
-            </div>
+        <dsa-slideshow>
+            <dsa-slide>
+                <img src="../Media/Projects/Excavate/june2022exss2.png" alt="Excavate Project" style="width:100%">
+                <dsa-caption>Some Text</dsa-caption>
+            </dsa-slide>
+            <dsa-slide>
+                <img src="../Media/Projects/GuardianOfLight/theLGuardPhoto.png" alt="Guardian of Light Project" style="width:100%">
+                <dsa-caption></dsa-caption>
+            </dsa-slide>
+            <dsa-slide>
+                <img src="../Media/Projects/WizardGoblins/WizardGobPhoto.png" alt="Wizards and Goblins Project" style="width:100%">
 
-            <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <img src="../Media/TestingImages/Console.png" style="width:100%">
-                <div class="text">Caption Three</div>
-            </div>
-            <!--                     Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        <!--                 The dots/circles -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
+            </dsa-slide>
+        </dsa-slideshow>
+
+
+        <section class="homeInfo">
+            <h2 class="homeInfo__header">About Me</h2>
+            <p class="homeInfo__para">I started programming back in 2018 with Java. My first venture into the gaming side of the industry was Game Maker Studio 2; Working on refactoring and updating a project an old friend had started. Since then I have expanded my skill set to include more languages such as C# and C++. As well as using more common engines like unity and unreal.</p>
+            <p class="homeInfo__para">In July of 2022 I graduated from Full Sail University and I'm currently working at Strawn Works Games, an indie studio based in California.</p>
+        </section>
+
     </main>
 
+
+    <br>
 
     <dsa-footer>
     </dsa-footer>
