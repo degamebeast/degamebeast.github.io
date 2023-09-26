@@ -95,6 +95,7 @@ body
     border: 10px solid red;
     height: 10vh;
     width: 100%;
+    z-index: 5;
 }
 
 .stickyHeader
@@ -103,6 +104,7 @@ body
     border: 10px solid red;
     height: 10vh;
     top: 0;
+    z-index: 5;
 }
 
 .homeHeader
@@ -112,6 +114,8 @@ body
     align-items: center;
     flex-flow: column nowrap;
     border: 10px double black;
+
+    background-color: var(--BACKGROUND_COLOR);
 }
 
 /*#endregion*/
@@ -174,14 +178,14 @@ body
 
 .homeInfo__header
 {
-    font-size: 3rem;
+    font-size: 5rem;
     text-align: center;
     width: 100%;
 }
 
 .homeInfo__para
 {
-    font-size: 1rem;
+    font-size: 3rem;
     text-align: center;
 }
 
@@ -271,11 +275,25 @@ body
 
 }
 
+.resumeHolder
+{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.loadingScreen
+{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 
-
+    border: hidden;
+}
 /*#region Projects */
-
 .projectHolder
 {
     display: flex;
