@@ -28,18 +28,17 @@
 
 
 
-<body class="" onload="documentLoad()">
+<body onload="documentLoad()">
     <dsa-header></dsa-header>
 
-    <main>
+    <main class="homePage">
 
         <section class="homeWelcome">
             <p class="welcome__quote">The answers are simpler than you think</p>
 
         </section>
 
-
-        <dsa-slideshow>
+        <dsa-slideshow class="homeSlides">
             <dsa-slide>
                 <img src="../Media/Projects/Excavate/june2022exss2.png" alt="Excavate Project" style="width:100%">
                 <dsa-caption><span class="slideCaptionHighlight">Some Text</span></dsa-caption>
@@ -55,10 +54,16 @@
         </dsa-slideshow>
 
 
-        <section class="homeInfo">
+        <section class="homeInfo" id="about_me">
             <h2 class="homeInfo__header">About Me</h2>
             <p class="homeInfo__para">I started programming back in 2018 with Java. My first venture into the gaming side of the industry was Game Maker Studio 2; Working on refactoring and updating a project an old friend had started. Since then I have expanded my skill set to include more languages such as C# and C++. As well as using more common engines like unity and unreal.</p>
             <p class="homeInfo__para">In July of 2022 I graduated from Full Sail University and I'm currently working at Strawn Works Games, an indie studio based in California.</p>
+        </section>
+
+        <section class="resumeHolder" id="resume">
+            <h2 class="resume__header">Resume</h2>
+            <iframe class="resumePDF" src="../Files/DeontaeAlbertie_Resume.pdf" width="500" height="700">
+            </iframe>
         </section>
 
     </main>

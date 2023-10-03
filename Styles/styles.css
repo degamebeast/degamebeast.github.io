@@ -21,6 +21,7 @@
     --BACKGROUND_COLOR: hsl(327, 47%, 20%);
     --FOREGROUND_COLOR: rgb(255, 179, 0);
     --ACTIVE_COLOR: royalblue;
+    --HEADER_HEIGHT: 10vh;
 
     /*#endregion*/
 
@@ -68,6 +69,7 @@
 
 html
 {
+    scroll-padding-top: var(--HEADER_HEIGHT);
 }
 
 /*Default body look*/
@@ -109,12 +111,12 @@ body
 
 .homeHeader
 {
+    height: var(--HEADER_HEIGHT);
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-flow: column nowrap;
     border: 10px double black;
-
     background-color: var(--BACKGROUND_COLOR);
 }
 
@@ -174,6 +176,7 @@ body
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    padding: 10% 0;
 }
 
 .homeInfo__header
@@ -187,6 +190,13 @@ body
 {
     font-size: 3rem;
     text-align: center;
+}
+
+.resume__header
+{
+    font-size: 5rem;
+    text-align: center;
+    width: 100%;
 }
 
 /*#region List*/
@@ -270,7 +280,7 @@ body
 
 /*#endregion */
 
-.fullPagePDF
+.resumePDF
 {
 
 }
@@ -281,6 +291,7 @@ body
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    padding: 10% 0;
 }
 
 .loadingScreen
@@ -293,6 +304,18 @@ body
 
     border: hidden;
 }
+
+.homePage
+{
+    margin: 5% 7.5%;
+}
+
+.homeSlides
+{
+    display: block;
+    padding: 10% 0;
+}
+
 /*#region Projects */
 .projectHolder
 {
