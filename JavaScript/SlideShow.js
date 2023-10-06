@@ -115,14 +115,23 @@ class DA_Slideshow extends HTMLElement {
             }
             elementCheck = curSlide.getElementsByTagName("img")[0];
             var curImage = elementCheck;
+            var curVideo = null;
             if (elementCheck != null)
                 curImage = slideTemplate.insertAdjacentElement("beforeend", curImage);
+            else {
+                elementCheck = curSlide.getElementsByTagName("video")[0];
+                curVideo = elementCheck;
+                if (elementCheck != null)
+                    curVideo = slideTemplate.insertAdjacentElement("beforeend", curVideo);
+            }
             var curCaption = slideTemplate.insertAdjacentElement("beforeend", slideCaption);
             var slideClone = slideTemplate.cloneNode(true);
             slidesContainer.appendChild(slideClone);
 
             if (curImage != null)
                 curImage.remove();
+            if (curVideo != null)
+                curVideo.remove();
             if (curCaption != null)
                 curCaption.remove();
         }
