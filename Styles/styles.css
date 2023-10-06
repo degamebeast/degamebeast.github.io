@@ -241,10 +241,12 @@ body
         background-color: var(--ACTIVE_COLOR);
     }
 
+.header__button a
+{
+    width: 100%;
+}
 /*#endregion */
-
 /*#region Footer__Elements */
-
 .footer_h1
 {
     display: inline;
