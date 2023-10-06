@@ -21,7 +21,7 @@ class DA_Header extends HTMLElement
             <ul class="header__list noBullets">
                 <li></li>
                 <li class="header__button"><a class="noTextDecoration" href="home_page.html">Home</a></li>
-                <li class="header__button"><a class="noTextDecoration" href="projects.html">Project</a></li>
+                <li class="header__button"><a class="noTextDecoration" href="projects.html">Projects</a></li>
                 <li class="header__button"><a class="noTextDecoration" href="home_page.html#resume">Resume</a></li>
                 <li class="header__button"><a class="noTextDecoration" href="home_page.html#about_me">About Me</a></li>
                 <li></li>

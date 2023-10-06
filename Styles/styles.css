@@ -17,7 +17,8 @@
 
 
     /*#region -Colors*/
-
+/*
+    --BACKGROUND_COLOR: hsl(343, 82%, 22%);*/
     --BACKGROUND_COLOR: hsl(327, 47%, 20%);
     --FOREGROUND_COLOR: rgb(255, 179, 0);
     --ACTIVE_COLOR: royalblue;
@@ -81,9 +82,13 @@ body
 
 }
 
+dsa-project
+{
+    display: block;
+    padding: 5vh 0;
+}
+
 /*#endregion*/
-
-
 .debugText
 {
     font-size: 7rem;
@@ -322,6 +327,11 @@ body
     padding: 10% 0;
 }
 
+.projectPage
+{
+    margin: 3% 7.5%;
+}
+
 /*#region Projects */
 .projectHolder
 {
@@ -333,6 +343,7 @@ body
 .projectTitle
 {
     order: -1;
+    text-align: center;
     font-size: 4rem;
 }
 
@@ -346,7 +357,7 @@ body
 .projectImage
 {
     order: 1;
-    max-width: 90vw;
+    max-width: 100%;
 }
 
 
