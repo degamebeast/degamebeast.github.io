@@ -17,8 +17,8 @@
 
 
     /*#region -Colors*/
-/*
-    --BACKGROUND_COLOR: hsl(343, 82%, 22%);*/
+
+/*    --BACKGROUND_COLOR: hsl(343, 82%, 22%);*/
     --BACKGROUND_COLOR: hsl(327, 47%, 20%);
     --FOREGROUND_COLOR: rgb(255, 179, 0);
     --ACTIVE_COLOR: royalblue;

@@ -1,3 +1,7 @@
+function testCall() {
+    console.log("test");
+}
+
 class DA_Header extends HTMLElement
 {
     constructor()
@@ -102,6 +106,10 @@ class DA_Project extends HTMLElement {
         this.setAttribute("helperLoad", "");
 
     }
+
+    disconnectedCallback() {
+
+    }
 }
 
 
@@ -109,4 +117,5 @@ class DA_Project extends HTMLElement {
 customElements.define('dsa-header', DA_Header);
 customElements.define('dsa-footer', DA_Footer);
 customElements.define('dsa-project', DA_Project);
+
 //customElements.define('dsa-title', DA_Title);

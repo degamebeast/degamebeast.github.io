@@ -1,9 +1,11 @@
 let slideIndex = 1;
 let slideshowIntervalId = null;
+let shouldTick = true;
 
 //Sets the default index to 1 and shows the first slide
 function setupSlides() {
     slideIndex = 1;
+
     showSlides(slideIndex);
 }
 
@@ -25,27 +27,51 @@ function showSlides(n) {
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
+        slides[i].removeEventListener("mouseover", slideshowTickStop);
+        slides[i].removeEventListener("mouseout", slideshowTickStart);
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].addEventListener("mouseover", slideshowTickStop);
+    slides[slideIndex - 1].addEventListener("mouseout", slideshowTickStart);
     dots[slideIndex - 1].className += " active";
 
-    resetSlideShowInterval();
+    //resetSlideShowInterval();
+}
+
+function slideshowTickStop() {
+    shouldTick = false;
+    console.log("stop");
+}
+
+function slideshowTickStart() {
+    shouldTick = true;
+    console.log("start");
 }
 
 function slideshowTick()
 {
-    plusSlides(1);
+    if (shouldTick) {
+        plusSlides(1);
+    }
 }
 
 function resetSlideShowInterval() {
-    if (slideshowIntervalId != null)
-        clearInterval(slideshowIntervalId);
+    //console.log("reset");
+    clearSlideShowInterval();
     slideshowIntervalId = setInterval(slideshowTick, 5000);
 
+
+
     return slideshowIntervalId;
+}
+
+function clearSlideShowInterval() {
+    //console.log("clear");
+    if (slideshowIntervalId != null)
+        clearInterval(slideshowIntervalId);
 }
 
 class DA_Slideshow extends HTMLElement {
@@ -66,7 +92,7 @@ class DA_Slideshow extends HTMLElement {
         <!--                 Slideshow container -->
         <div class="slideshow-container">
             <!--                     Full-width images with number and caption text -->
-            <div class="mySlides fade">
+            <dsa-slide class="mySlides fade">
                 <!--<div class="numbertext">1 / 3</div>-->
                 <img src="../Media/TestingImages/jojoMoji.jpg" style="width:100%">
                 <div class="slideCaption">Caption Text</div>
@@ -113,25 +139,41 @@ class DA_Slideshow extends HTMLElement {
             if (elementCheck != null) {
                 slideCaption.innerHTML = curCaption.innerHTML;
             }
-            elementCheck = curSlide.getElementsByTagName("img")[0];
-            var curImage = elementCheck;
-            var curVideo = null;
+            var curImage = curSlide.getElementsByTagName("img")[0];
+            elementCheck = curImage;
+
+            var imageElement = null;
+            var videoElement = null;
             if (elementCheck != null)
-                curImage = slideTemplate.insertAdjacentElement("beforeend", curImage);
+                imageElement = slideTemplate.insertAdjacentElement("beforeend", curImage);
             else {
-                elementCheck = curSlide.getElementsByTagName("video")[0];
-                curVideo = elementCheck;
-                if (elementCheck != null)
-                    curVideo = slideTemplate.insertAdjacentElement("beforeend", curVideo);
+                var curVideo = curSlide.getElementsByTagName("video")[0];
+                elementCheck = curVideo;
+                if (elementCheck != null) {
+                    videoElement = slideTemplate.insertAdjacentElement("beforeend", curVideo);
+                }
             }
             var curCaption = slideTemplate.insertAdjacentElement("beforeend", slideCaption);
             var slideClone = slideTemplate.cloneNode(true);
+
+
+
             slidesContainer.appendChild(slideClone);
 
-            if (curImage != null)
-                curImage.remove();
-            if (curVideo != null)
-                curVideo.remove();
+/*            var currentSlides = slidesContainer.getElementsByTagName("dsa-slide");
+            var slide = currentSlides[currentSlides.length - 1];
+            var vids = slide.getElementsByTagName("video");
+
+            for (var j = 0; j < vids.length; j++) {
+                console.log("vidNum" + j);
+                slide.addEventListener("mouseenter", () => { vids[j].play(); });
+                slide.addEventListener("mouseout", () => { vids[j].pause(); });
+            }*/
+
+            if (imageElement != null)
+                imageElement.remove();
+            if (videoElement != null)
+                videoElement.remove();
             if (curCaption != null)
                 curCaption.remove();
         }
@@ -171,14 +213,17 @@ class DA_Slideshow extends HTMLElement {
     connectedCallback() {
         this.setAttribute("helperLoad", "");
         resetSlideShowInterval();
+        //console.log("connected");
     }
 
 
     disconnectedCallback() {
         if (slideshowIntervalId != null)
             clearInterval(slideshowIntervalId);
+
+/*        this.removeEventListener("mouseenter", clearInterval);
+        this.removeEventListener("mouseout", resetSlideShowInterval);*/
     }
-    
 }
 
 
