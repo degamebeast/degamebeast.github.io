@@ -1,6 +1,8 @@
 let slideIndex = 1;
 let slideshowIntervalId = null;
 let shouldTick = true;
+let activeCover = null;
+let activeClip = null;
 
 //Sets the default index to 1 and shows the first slide
 function setupSlides() {
@@ -20,6 +22,8 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+    activeCover = null;
+    activeClip = null;
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
@@ -38,16 +42,50 @@ function showSlides(n) {
     slides[slideIndex - 1].addEventListener("mouseout", slideshowTickStart);
     dots[slideIndex - 1].className += " active";
 
+    var images = slides[slideIndex - 1].getElementsByTagName("img");
+
+    for (var imageInd = 0; imageInd < images.length; imageInd++) {
+        var curImage = images[imageInd];
+        if (curImage.hasAttribute("dsa_cover")) {
+            activeCover = curImage;
+        }
+        if (curImage.hasAttribute("dsa_clip")) {
+            activeClip = curImage;
+        }
+    }
+
+    showCover();
+
     //resetSlideShowInterval();
+}
+
+function showCover()
+{
+    if (activeCover == null || activeClip == null)
+        return;
+
+    activeCover.style.display = "block";
+    activeClip.style.display = "none";
+}
+
+function showClip()
+{
+    if (activeCover == null || activeClip == null)
+        return;
+
+    activeCover.style.display = "none";
+    activeClip.style.display = "block";
 }
 
 function slideshowTickStop() {
     shouldTick = false;
+    showClip();
     console.log("stop");
 }
 
 function slideshowTickStart() {
     shouldTick = true;
+    showCover();
     console.log("start");
 }
 
@@ -139,20 +177,44 @@ class DA_Slideshow extends HTMLElement {
             if (elementCheck != null) {
                 slideCaption.innerHTML = curCaption.innerHTML;
             }
-            var curImage = curSlide.getElementsByTagName("img")[0];
-            elementCheck = curImage;
+            var curCover = null;
+            var curClip = null;
+            var images = curSlide.getElementsByTagName("img");
 
-            var imageElement = null;
-            var videoElement = null;
+            for (var imageInd = 0; imageInd < images.length; imageInd++)
+            {
+                var curImage = images[imageInd];
+                if (curImage.hasAttribute("dsa_cover"))
+                {
+                    curCover = curImage;
+                }
+                if (curImage.hasAttribute("dsa_clip"))
+                {
+                    curClip = curImage;
+                }
+            }
+
+
+            var coverImageElement = null;
+            var clipImageElement = null;
+
+            elementCheck = curCover;
+
             if (elementCheck != null)
-                imageElement = slideTemplate.insertAdjacentElement("beforeend", curImage);
-            else {
+                coverImageElement = slideTemplate.insertAdjacentElement("beforeend", curCover);
+
+            elementCheck = curClip;
+
+            if (elementCheck != null)
+                clipImageElement = slideTemplate.insertAdjacentElement("beforeend", curClip);
+
+/*            else {
                 var curVideo = curSlide.getElementsByTagName("video")[0];
                 elementCheck = curVideo;
                 if (elementCheck != null) {
                     videoElement = slideTemplate.insertAdjacentElement("beforeend", curVideo);
                 }
-            }
+            }*/
             var curCaption = slideTemplate.insertAdjacentElement("beforeend", slideCaption);
             var slideClone = slideTemplate.cloneNode(true);
 
@@ -170,10 +232,10 @@ class DA_Slideshow extends HTMLElement {
                 slide.addEventListener("mouseout", () => { vids[j].pause(); });
             }*/
 
-            if (imageElement != null)
-                imageElement.remove();
-            if (videoElement != null)
-                videoElement.remove();
+            if (coverImageElement != null)
+                coverImageElement.remove();
+            if (clipImageElement != null)
+                clipImageElement.remove();
             if (curCaption != null)
                 curCaption.remove();
         }
