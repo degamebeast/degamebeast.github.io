@@ -28,60 +28,65 @@
 
 
 
-<body onload="documentLoad()">
-    <dsa-header></dsa-header>
+<body class="" onload="documentLoad()">
 
-    <main class="homePage">
+    <div class="bodyLoading">
 
-        <section class="homeWelcome">
-            <p class="welcome__quote">The answers are simpler than you think</p>
-        </section>
+        <h1 class="bodyLoadingText">        Loading...</h1>
 
-        <dsa-slideshow class="homeSlides">
-            <dsa-slide>
-                <img src="../Media/Projects/Excavate/june2022exss2.png" alt="Excavate Project" style="width:100%" dsa_cover>
-                <img src="../Media/Projects/GuardianOfLight/theLGuardPhoto.png" alt="Guardian of Light Project" style="width:100%" dsa_clip>
-                <!--                <video style="width:100%" controls loop>
-            <source src="../Media/Projects/Excavate/ExcavateVid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>-->
-            </dsa-slide>
-            <dsa-slide>
-                <img src="../Media/Projects/Excavate/june2022exss2.png" alt="Excavate Project" style="width:100%">
-                <dsa-caption><!--<span class="slideCaptionHighlight">Some Text</span>--></dsa-caption>
-            </dsa-slide>
-            <dsa-slide>
-                <img src="../Media/Projects/GuardianOfLight/theLGuardPhoto.png" alt="Guardian of Light Project" style="width:100%">
-                <dsa-caption></dsa-caption>
-            </dsa-slide>
-            <dsa-slide>
-                <img src="../Media/Projects/WizardGoblins/WizardGobPhoto.png" alt="Wizards and Goblins Project" style="width:100%">
+    </div>
+    <div class="mainBodyContent wait">
+        <dsa-header></dsa-header>
 
-            </dsa-slide>
-        </dsa-slideshow>
+        <main class="homePage">
 
+            <section class="homeWelcome">
+                <p class="welcome__quote">The answers are simpler than you think</p>
+            </section>
 
-        <section class="homeInfo" id="about_me">
-            <h2 class="homeInfo__header">About Me</h2>
-            <p class="homeInfo__para">I started programming back in 2018 with Java. My first venture into the gaming side of the industry was Game Maker Studio 2; Working on refactoring and updating a project an old friend had started. Since then I have expanded my skill set to include more languages such as C# and C++. As well as using more common engines like unity and unreal.</p>
-            <p class="homeInfo__para">In July of 2022 I graduated from Full Sail University and I'm currently working at Strawn Works Games, an indie studio based in California.</p>
-        </section>
+            <dsa-slideshow class="homeSlides">
+                <dsa-slide>
+                    <img class="testHover" src="../Media/Projects/Excavate/june2022exss2.png" alt="Excavate Project" style="width:100%" width="1080" dsa_cover>
+                    <img class="testHover" src="../Media/Projects/Excavate/ExcavateVid.gif" alt="gif test" style="width:100%" width="1080" dsa_clip>
+                </dsa-slide>
+                <dsa-slide>
+                    <img src="../Media/Projects/Excavate/june2022exss2.png" alt="Excavate Project" style="width:100%">
+                    <dsa-caption><!--<span class="slideCaptionHighlight">Some Text</span>--></dsa-caption>
+                </dsa-slide>
+                <dsa-slide>
+                    <img src="../Media/Projects/GuardianOfLight/theLGuardPhoto.png" alt="Guardian of Light Project" style="width:100%">
+                    <dsa-caption></dsa-caption>
+                </dsa-slide>
+                <dsa-slide>
+                    <img src="../Media/Projects/WizardGoblins/WizardGobPhoto.png" alt="Wizards and Goblins Project" style="width:100%">
 
-        <section class="resumeHolder" id="resume">
-            <h2 class="resume__header">Resume</h2>
-            <img src="../Files/DeontaeAlbertie_Resume.jpg" alt="Resume Image">
-<!--            <iframe class="resumePDF" src="../Files/DeontaeAlbertie_Resume.pdf#page=1&view=Fit&toolbar=0">
-            </iframe>-->
-
-        </section>
-
-    </main>
+                </dsa-slide>
+            </dsa-slideshow>
 
 
-    <br>
+            <section class="homeInfo" id="about_me">
+                <h2 class="homeInfo__header">About Me</h2>
+                <p class="homeInfo__para">I started programming back in 2018 with Java. My first venture into the gaming side of the industry was Game Maker Studio 2; Working on refactoring and updating a project an old friend had started. Since then I have expanded my skill set to include more languages such as C# and C++. As well as using more common engines like unity and unreal.</p>
+                <p class="homeInfo__para">In July of 2022 I graduated from Full Sail University and I'm currently working at Strawn Works Games, an indie studio based in California.</p>
+            </section>
 
-    <dsa-footer>
-    </dsa-footer>
+            <section class="resumeHolder" id="resume">
+                <h2 class="resume__header">Resume</h2>
+                <img src="../Files/DeontaeAlbertie_Resume.jpg" alt="Resume Image">
+                <!--            <iframe class="resumePDF" src="../Files/DeontaeAlbertie_Resume.pdf#page=1&view=Fit&toolbar=0">
+                        </iframe>-->
+
+            </section>
+
+        </main>
+
+
+        <br>
+
+        <dsa-footer>
+        </dsa-footer>
+    </div>
+    
 </body>
 
 </html>

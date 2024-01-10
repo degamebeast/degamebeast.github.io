@@ -24,6 +24,8 @@
     --ACTIVE_COLOR: royalblue;
     --HEADER_HEIGHT: 10vh;
 
+    --BODY_LOADING_TIME: 3s;
+
     /*#endregion*/
 
 
@@ -94,6 +96,126 @@ dsa-project
     font-size: 7rem;
     text-align: center;
 }
+
+@keyframes fadeIn
+{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 100%;
+
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes loadIn {
+    0% {
+        display: none;
+    }
+
+    99% {
+        display: none;
+    }
+
+    100% {
+        display: block;
+    }
+}
+
+@keyframes unLoad {
+
+    0% {
+        display: flex;
+    }
+
+    90% {
+        display: flex;
+    }
+
+    91% {
+        display: none;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+.bodyLoading {
+    width: 98vw;
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: unLoad;
+    animation-duration: var(--BODY_LOADING_TIME);
+    animation-fill-mode: forwards;
+}
+.bodyLoadingText{
+
+    color: white;
+
+
+}
+
+.wait {
+/*    display: none;*/
+
+    animation-name: loadIn;
+    animation-duration: var(--BODY_LOADING_TIME);
+    animation-fill-mode: forwards;
+}
+
+.ccShowSlideImg {
+    /*    opacity: 100%;
+    display: block;
+    transition: all 2s;*/
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.ccHideSlideImg {
+    /*    opacity: 0;
+    display: none;
+    transition: all 2s;*/
+    animation-name: fadeOut;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+/*.slideClip {
+    opacity: 0;
+    display: none;
+}
+
+    .slideClip:hover {
+        opacity: 100%;
+        display: block;
+        transition: linear 2s;
+    }
+
+.slideCover {
+    opacity: 100%;
+    display: block;
+}
+
+    .slideCover:hover {
+        opacity: 0;
+        display: none;
+        transition: linear 2s;
+    }*/
+
 
 /*#region Headers*/
 .fixedHeader

@@ -48,9 +48,14 @@ function showSlides(n) {
         var curImage = images[imageInd];
         if (curImage.hasAttribute("dsa_cover")) {
             activeCover = curImage;
+            //activeCover.classList.add("slideCover");
+            activeCover.style.position = "absolute"
+            
         }
         if (curImage.hasAttribute("dsa_clip")) {
+            //activeCLip.classList.add("slideCover");
             activeClip = curImage;
+            //activeClip.style.position = "absolute"
         }
     }
 
@@ -64,8 +69,11 @@ function showCover()
     if (activeCover == null || activeClip == null)
         return;
 
-    activeCover.style.display = "block";
-    activeClip.style.display = "none";
+    activeClip.parentElement = activeCover;
+    activeCover.classList.add("ccShowSlideImg");
+    activeCover.classList.remove("ccHideSlideImg");
+    activeClip.classList.remove("ccShowSlideImg");
+    activeClip.classList.add("ccHideSlideImg");
 }
 
 function showClip()
@@ -73,8 +81,11 @@ function showClip()
     if (activeCover == null || activeClip == null)
         return;
 
-    activeCover.style.display = "none";
-    activeClip.style.display = "block";
+    activeClip.parentElement = activeCover;
+    activeCover.classList.remove("ccShowSlideImg");
+    activeCover.classList.add("ccHideSlideImg");
+    activeClip.classList.add("ccShowSlideImg");
+    activeClip.classList.remove("ccHideSlideImg");
 }
 
 function slideshowTickStop() {
