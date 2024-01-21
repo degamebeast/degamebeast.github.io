@@ -185,6 +185,7 @@ dsa-project
 
 .homeHeader
 {
+    background-color: var(--BACKGROUND_COLOR);
     height: var(--HEADER_HEIGHT);
     display: flex;
     justify-content: flex-end;
@@ -192,6 +193,8 @@ dsa-project
     flex-flow: column nowrap;
     border: 10px double black;
     background-color: var(--BACKGROUND_COLOR);
+
+    height: min(200px, 14vh);
 }
 
 /*#endregion*/
@@ -286,6 +289,7 @@ dsa-project
 
 .header_h1
 {
+    display: block;
     font-size: 4.5rem;
 }
 
@@ -434,7 +438,7 @@ dsa-project
 
 
 
-/*#region desktop: styles and style mods*/
+/*#region desktop: styles and style mods (deprecated FAST)*/
 
 
 /*@media screen and (min-width: 500px) 
@@ -444,7 +448,7 @@ dsa-project
         --BACKGROUND_COLOR: hsl(327, 47%, 20%);
         --FOREGROUND_COLOR: rgb(255, 179, 0);
     }
-}*/
-
+}
+*/
 
 /*#endregion*/

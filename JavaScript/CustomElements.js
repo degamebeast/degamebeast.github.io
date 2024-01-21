@@ -17,6 +17,9 @@ class DA_Header extends HTMLElement
 
         this.innerHTML = `
     <header class="stickyHeader homeHeader">
+    <p class="">
+
+    </p>
         <h1 class="header_h1">
             Deontae Albertie
         </h1>
