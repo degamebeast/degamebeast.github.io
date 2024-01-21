@@ -4,6 +4,10 @@ let shouldTick = true;
 let activeCover = null;
 let activeClip = null;
 
+let intervalTimeLength = 10;//In seconds
+
+
+
 //Sets the default index to 1 and shows the first slide
 function setupSlides() {
     slideIndex = 1;
@@ -59,9 +63,22 @@ function showSlides(n) {
         }
     }
 
-    showCover();
+    initCoverAndClip();
 
     //resetSlideShowInterval();
+}
+
+function initCoverAndClip() {
+    if (activeCover == null || activeClip == null)
+        return;
+
+    activeClip.parentElement = activeCover;
+    activeCover.style.opacity = 1;
+    activeClip.style.opacity = 0;
+    activeCover.classList.remove("ccShowSlideImg");
+    activeCover.classList.remove("ccHideSlideImg");
+    activeClip.classList.remove("ccShowSlideImg");
+    activeClip.classList.remove("ccHideSlideImg");
 }
 
 function showCover()
@@ -110,7 +127,7 @@ function slideshowTick()
 function resetSlideShowInterval() {
     //console.log("reset");
     clearSlideShowInterval();
-    slideshowIntervalId = setInterval(slideshowTick, 5000);
+    slideshowIntervalId = setInterval(slideshowTick, intervalTimeLength * 1000);
 
 
 
@@ -188,6 +205,9 @@ class DA_Slideshow extends HTMLElement {
             if (elementCheck != null) {
                 slideCaption.innerHTML = curCaption.innerHTML;
             }
+            else
+                slideCaption.innerHTML = "";
+
             var curCover = null;
             var curClip = null;
             var images = curSlide.getElementsByTagName("img");

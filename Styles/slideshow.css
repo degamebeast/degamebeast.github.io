@@ -5,11 +5,58 @@
     box-sizing: border-box
 }*/
 
-:root
+:root 
 {
     --SLIDESHOW_TEXT: #f2f2f2;
     --BUTTON_BORDER_RADIUS: 10px;
+    --HOVER_LOADING_TIME: 1s;
 }
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.ccShowSlideImg {
+    /*    opacity: 100%;
+    display: block;
+    transition: all 2s;*/
+    animation-name: fadeIn;
+    animation-duration: var(--HOVER_LOADING_TIME);
+    animation-fill-mode: forwards;
+}
+
+.ccHideSlideImg {
+    /*    opacity: 0;
+    display: none;
+    transition: all 2s;*/
+    animation-name: fadeOut;
+    animation-duration: var(--HOVER_LOADING_TIME);
+    animation-fill-mode: forwards;
+}
+
+
+
+
+
+
+
 
 /* Slideshow container */
 .slideshow-container
