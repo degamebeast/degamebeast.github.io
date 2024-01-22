@@ -13,6 +13,9 @@ function setupSlides() {
     slideIndex = 1;
 
     showSlides(slideIndex);
+
+    LoadPageIn();
+
 }
 
 // Next/previous controls
@@ -80,7 +83,6 @@ function initCoverAndClip() {
     activeClip.classList.remove("ccShowSlideImg");
     activeClip.classList.remove("ccHideSlideImg");
 
-    LoadPageIn();
 }
 
 function showCover()
