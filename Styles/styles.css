@@ -141,7 +141,7 @@ dsa-project
     animation-fill-mode: forwards;
 }
 
-/*.bodyLoading {
+.bodyLoading {
     width: 98vw;
     height: 98vh;
     display: flex;
@@ -150,7 +150,7 @@ dsa-project
     animation-name: unLoad;
     animation-duration: var(--BODY_LOADING_TIME);
     animation-fill-mode: forwards;
-}*/
+}
 
 .bodyLoadingText{
 
