@@ -25,7 +25,7 @@
     --FOREGROUND_COLOR: hsl(0, 0%, 70%);
     --ACTIVE_COLOR: royalblue;
     --HEADER_HEIGHT: 10vh;
-    --BODY_LOADING_TIME: 0.5s;
+    --BODY_LOADING_TIME: 3s;
     /*#endregion*/
     /*#endregion*/
 }
@@ -135,10 +135,11 @@ dsa-project
 /*#region loading styles*/
 .wait {
     /*    display: none;*/
-
-    animation-name: loadIn;
+    /*    animation-name: loadIn;
     animation-duration: var(--BODY_LOADING_TIME);
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
+    opacity: 0;
+    display: none;
 }
 
 .bodyLoading {
@@ -147,9 +148,12 @@ dsa-project
     display: flex;
     justify-content: center;
     align-items: center;
-    animation-name: unLoad;
+    display: flex;
+    opacity: 1;
+    display: flex;
+    /*    animation-name: unLoad;
     animation-duration: var(--BODY_LOADING_TIME);
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
 }
 
 .bodyLoadingText{

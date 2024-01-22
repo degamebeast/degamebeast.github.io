@@ -13,3 +13,25 @@ Giving an element the 'helperLoad' attribute without it also having a 'onHelperL
     }
 
 };
+
+function LoadPageIn() {
+    var waitingElements = document.getElementsByClassName("wait");
+    var bodyLoadingElements = document.getElementsByClassName("bodyLoading");
+
+
+    if (waitingElements == null || bodyLoadingElements == null)
+        return;
+
+    var mainBody = waitingElements[0];
+    var loadingBody = bodyLoadingElements[0];
+
+
+    if (mainBody == null || loadingBody == null)
+        return;
+
+    mainBody.style.opacity = 1;
+    loadingBody.style.opacity = 0;
+    mainBody.style.display = "block";
+    loadingBody.style.display = "none";
+
+}

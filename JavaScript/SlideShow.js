@@ -79,6 +79,8 @@ function initCoverAndClip() {
     activeCover.classList.remove("ccHideSlideImg");
     activeClip.classList.remove("ccShowSlideImg");
     activeClip.classList.remove("ccHideSlideImg");
+
+    LoadPageIn();
 }
 
 function showCover()
