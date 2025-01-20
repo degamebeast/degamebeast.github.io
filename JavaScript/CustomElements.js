@@ -24,7 +24,7 @@ class DA_Header extends HTMLElement
             Deontae Albertie
         </h1>
 
-        <nav class="fillRow">
+        <nav class="">
             <ul class="header__list noBullets">
                 <li></li>
                 <li class="header__button"><a class="noTextDecoration" href="home_page.html#">Home</a></li>
