@@ -388,9 +388,9 @@ dsa-project
     border: hidden;
 }
 
-.homePage
+.homePage 
 {
-    margin: 3% 25%;
+    margin: 3% 25%; /*7.5% on mobile*/
 }
 
 .homeSlides
@@ -401,7 +401,7 @@ dsa-project
 
 .projectPage
 {
-    margin: 3% 25%;
+    margin: 3% 25%;/*7.5% on mobile*/
 }
 
 /*#region Projects */
@@ -437,17 +437,43 @@ dsa-project
 
 
 
-/*#region desktop: styles and style mods (deprecated FAST)*/
+/*#region desktop*/
 
 
-/*@media screen and (min-width: 500px) 
-{
-    :root 
+@media (max-aspect-ratio: 1/1) {
+    .homeHeader
     {
-        --BACKGROUND_COLOR: hsl(327, 47%, 20%);
-        --FOREGROUND_COLOR: rgb(255, 179, 0);
+        height: min(200px, 14vh);
+    }
+
+    .homeFooter 
+    {
+        height: 10vh;
+    }
+
+
+    .header_h1 
+    {
+        font-size: 4.5rem;
+    }
+
+    .header__list 
+    {
+        font-size: 3rem;
+        min-width: 20vw;
+        height: 5vh;
+    }
+
+    .homePage 
+    {
+        margin: 3% 7.5%;
+    }
+
+    .projectPage 
+    {
+        margin: 3% 7.5%;
     }
 }
-*/
+
 
 /*#endregion*/
